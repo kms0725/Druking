@@ -60,8 +60,8 @@ public class Frame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String str = link.getText();
 				try {
-					BufferedWriter out = new BufferedWriter(new FileWriter("URL.txt"));
-					out.write(str);
+					BufferedWriter out = new BufferedWriter(new FileWriter("URL.txt")); 
+					out.write(str); //URL.txt에 텍스트필드에있는 값(주소) 저장
 					out.close();
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -93,7 +93,7 @@ public class Frame extends JFrame {
 		if(startt.isSuccessful()) {
 			System.out.println("Wordcloud 그리기");			
 			ImageIcon cloudImg = new ImageIcon("cloud.jpg");
-			setImg(cloudImg);
+			setImg(cloudImg); //wordcloud 레이블에 그리기
 			System.out.println("wordcloud 성공");
 		}
 		else {
@@ -112,7 +112,7 @@ public class Frame extends JFrame {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream("druking.txt"), "euc-kr"));
 			String line = null;
 			while((line = br.readLine()) != null) {
-				reply.setText(reply.getText() + line + "\n");
+				reply.setText(reply.getText() + line + "\n"); //유사 댓글 텍스트필드에 출력!
 			}			 
 		} catch(IOException e) {
 			e.printStackTrace();
